@@ -1,5 +1,5 @@
 def select_books_titles_and_years_in_first_series_order_by_year
-  "SELECT b.title, b.year FROM books AS b JOIN series AS s ON b.series_id = s.id WHERE s.id = 1 ORDER BY 2;"
+  ""SELECT title, year FROM books WHERE series_id = 1 ORDER BY 2;""
 end
 
 def select_name_and_motto_of_char_with_longest_motto
@@ -15,7 +15,7 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT s.title FROM series AS s JOIN characters AS c ON s.id = c.series_id WHERE c.species = 'human' GROUP BY 1 ORDER BY COUNT(s.title) DESC LIMIT 1;"
+  "SELECT s.title FROM series AS s JOIN characters AS c ON s.id = c.series_id WHERE c.species = 'human' ORDER BY COUNT(s.title) DESC LIMIT 1;"
 end
 
 def select_character_names_and_number_of_books_they_are_in
